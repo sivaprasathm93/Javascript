@@ -1,0 +1,26 @@
+//JavaScript-C24.2.0 (SpiderMonkey)
+
+print("Hello, world!")
+
+function arrayfunc($expectedValue){
+var $mainArray=[["Depth", "Manufacturing", "Revision","Description","Maturity State"],["product1", "10", "A.1","",""],["product2","20","B.1","True","False"],["product3","20","","True","Three"]]
+var maturityCol=$mainArray[0].indexOf($expectedValue[0]);
+print("column number: "+maturityCol)
+var mainArrayLength = $mainArray.length;
+print("mainArrayLength: "+$mainArray.length)
+for(var i=1; i<$mainArray.length; i++){
+    print(i)
+    var actual =($mainArray[i][maturityCol])
+    print (actual)
+    var expected=$expectedValue[i];
+    print(expected)
+    if(actual==expected){
+        print("Answer is matching expected: "+expected+" and actual: "+actual);
+    }else{
+        print("Answer is not matching expected: "+expected+" and actual: "+actual);
+    }
+}
+}
+
+print("calling array func") 
+arrayfunc(["Maturity State","","False","Three"])
