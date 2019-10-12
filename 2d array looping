@@ -1,0 +1,29 @@
+print("Hello, world!")
+var $mainArray=[["Depth", "Manufacturing", "Revision","Description","Maturity State"],["1", "2", "3","4","5"],["a", "b", "c","d","e"]]
+var $output;
+function arrayfunc(columnName,randomName){ 
+    var mainArrayLength = $mainArray.length;
+    print("mainArrayLength: "+mainArrayLength)
+    $output=new Array(mainArrayLength)    
+    print("main matrix :"+$mainArray)
+    for(var i=0;i<mainArrayLength;i++){
+        $output[i]=new Array($mainArray[0].length);
+        for(var j=0;j<$mainArray[0].length;j++){
+            if(i>0){
+            if($mainArray[0][j]==columnName){
+               
+                $output[i][j]=$mainArray[i][j]+randomName
+            }else{
+                $output[i][j]=$mainArray[i][j]
+               
+            }
+            }else{
+                 $output[i][j]=$mainArray[i][j]
+            }
+        } 
+    }
+    print("output matrix final :"+$output)
+}
+
+print("calling array func") 
+arrayfunc("Maturity State","_mahesh")
